@@ -1,51 +1,99 @@
-body{
-
+/* Base styles */
+body {
+    margin: 0;
+    padding: 0;
     height: 100vh;
-    background: url(image/pooling.jpg) no-repeat center center/cover;
+    background: url(image/pooling.jpg) no-repeat center center / cover;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: Arial, sans-serif;
 }
 
-.container{
-    width: 60%;
-    height: 250px;
+.container {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
     background-color: white;
-    border-radius: 30px;
+    border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
-#timer{
+#timer {
     width: 100%;
-    font-size: 72px;
+    font-size: 48px;
     text-align: center;
-    margin: 0px auto;
-    padding: 35px;
+    margin: 0 auto 20px;
+    padding: 20px 10px;
+    box-sizing: border-box;
 }
 
-.buttons{
+.buttons {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-button{
-    margin: 0 10px;
+button {
     border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px 15px;
+    transition: transform 0.2s ease;
 }
 
-button i{
-    font-size: 2rem;
-    padding: 10px;
+button:hover {
+    transform: scale(1.1);
+}
+
+button i {
+    font-size: 1.8rem;
     color: white;
 }
 
-#play{
+/* Button specific colors */
+#play {
     background-color: green;
 }
 
-#pause{
+#pause {
     background-color: orange;
 }
 
-#reset{
+#reset {
     background-color: red;
+}
+
+/* Responsive font sizes */
+@media (max-width: 768px) {
+    #timer {
+        font-size: 36px;
+    }
+
+    button i {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    #timer {
+        font-size: 28px;
+        padding: 15px 5px;
+    }
+
+    button {
+        padding: 8px 12px;
+    }
+
+    button i {
+        font-size: 1.2rem;
+    }
 }
